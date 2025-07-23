@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Modern Portfolio Design System with Glassmorphism */
+
+@layer base {
+  :root {
+    /* Core Colors - Sophisticated Palette */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --surface: 240 10% 6%;
+    --surface-variant: 240 6% 10%;
+
+    /* Glass Effects */
+    --glass-bg: 240 10% 8%;
+    --glass-border: 240 6% 20%;
+    --glass-shadow: 240 100% 50%;
+
+    /* Accent Colors */
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 217 91% 70%;
+    
+    --secondary: 270 95% 75%;
+    --secondary-foreground: 0 0% 98%;
+    --secondary-glow: 270 95% 85%;
+
+    --accent: 142 76% 36%;
+    --accent-foreground: 0 0% 98%;
+    --accent-glow: 142 76% 56%;
+
+    /* UI Elements */
+    --card: 240 10% 8%;
+    --card-foreground: 0 0% 95%;
+    --border: 240 6% 20%;
+    --input: 240 6% 12%;
+    --ring: 217 91% 60%;
+    --muted: 240 6% 10%;
+    --muted-foreground: 240 5% 64.9%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(270 95% 75%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(270 95% 75%) 0%, hsl(142 76% 36%) 100%);
+    --gradient-accent: linear-gradient(45deg, hsl(217 91% 60%), hsl(270 95% 75%), hsl(142 76% 36%));
+    --gradient-glass: linear-gradient(135deg, hsla(240, 10%, 15%, 0.1) 0%, hsla(240, 10%, 5%, 0.2) 100%);
+
+    /* Shadows & Glows */
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
+    --shadow-glass: 0 8px 32px hsla(0, 0%, 0%, 0.37);
+    --shadow-card: 0 20px 40px hsla(0, 0%, 0%, 0.5);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bouncy: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .light {
+    /* Light Mode Colors */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --surface: 0 0% 98%;
+    --surface-variant: 0 0% 96%;
+
+    /* Glass Effects for Light Mode */
+    --glass-bg: 0 0% 98%;
+    --glass-border: 0 0% 88%;
+    --glass-shadow: 240 100% 50%;
+
+    --card: 0 0% 98%;
+    --card-foreground: 240 10% 3.9%;
+    --border: 0 0% 88%;
+    --input: 0 0% 96%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 240 5% 45%;
+
+    /* Shadows for Light Mode */
+    --shadow-glass: 0 8px 32px hsla(240, 10%, 3.9%, 0.1);
+    --shadow-card: 0 20px 40px hsla(240, 10%, 3.9%, 0.15);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter overflow-x-hidden;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+}
+
+@layer components {
+  /* Glass Morphism Effects */
+  .glass {
+    background: hsla(var(--glass-bg) / 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid hsla(var(--glass-border) / 0.2);
+  }
+  
+  .glass-card {
+    @apply glass rounded-2xl;
+    box-shadow: var(--shadow-glass);
+  }
+  
+  .glass-strong {
+    background: hsla(var(--glass-bg) / 0.2);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border: 1px solid hsla(var(--glass-border) / 0.3);
+  }
+  
+  /* Gradient Text */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .gradient-text-secondary {
+    background: var(--gradient-secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Glow Effects */
+  .glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .glow-hover {
+    transition: var(--transition-smooth);
+  }
+  
+  .glow-hover:hover {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  /* Animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-glow-pulse {
+    animation: glowPulse 2s ease-in-out infinite alternate;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+  
+  /* Skill Bar Animation */
+  .skill-bar {
+    @apply relative overflow-hidden rounded-full bg-muted h-3;
+  }
+  
+  .skill-progress {
+    @apply h-full rounded-full bg-gradient-to-r from-primary to-secondary transition-all duration-1000 ease-out;
+    background: var(--gradient-primary);
+  }
+  
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--gradient-primary);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--gradient-secondary);
+  }
+}
+
+@layer utilities {
+  /* Font Families */
+  .font-inter {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  
+  .font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+  }
+  
+  /* Transitions */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bouncy {
+    transition: var(--transition-bouncy);
+  }
+}
+
+/* Keyframe Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 5px hsl(var(--primary));
+  }
+  100% {
+    box-shadow: 0 0 20px hsl(var(--primary)), 0 0 30px hsl(var(--primary));
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+/* Typewriter Effect */
+.typewriter {
+  overflow: hidden;
+  border-right: 2px solid hsl(var(--primary));
+  white-space: nowrap;
+  animation: typewriter 3s steps(40, end), blink 0.75s step-end infinite;
+}
