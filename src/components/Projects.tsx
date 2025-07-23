@@ -22,7 +22,7 @@ const Projects = () => {
     },
     {
       title: 'Code Analyzer',
-      description: 'MERN app to analyze and explain time/space complexity using Groq API',
+      description: 'MERN app to analyze time&space complexities, optimization suggestions and explanation of code using Groq API',
       image: 'images/code-analyzer.png',
       technologies: ['React.js', 'Node.js', 'MongoDB', 'Groq API', 'Express.js'],
       liveUrl: 'https://codeanalyzer-official.vercel.app/',

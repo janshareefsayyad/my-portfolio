@@ -74,13 +74,6 @@ const Contact = () => {
       value: 'Jan Shareef Sayyad',
       link: 'https://www.linkedin.com/in/jan-shareef-sayyad/',
       color: 'text-blue-400'
-    },
-    {
-      icon: Code2,
-      label: 'LeetCode',
-      value: '@ap_22bce9554',
-      link: 'https://leetcode.com/u/ap_22bce9554/',
-      color: 'text-yellow-400'
     }
   ];
 
@@ -223,7 +216,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleInputChange}
                     required
-                    rows={5}
+                    rows={9}
                     className="w-full px-4 py-3 glass-card rounded-xl border-0 focus:ring-2 focus:ring-primary transition-smooth resize-none bg-transparent"
                     placeholder="Enter your message here..."
                   />
