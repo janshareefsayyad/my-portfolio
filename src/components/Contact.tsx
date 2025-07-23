@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Mail, Github, Linkedin, Code2, Send, MapPin, Phone } from 'lucide-react';
@@ -30,7 +31,7 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-    const response = await fetch('https://formspree.io/f/mdkdedpn', {
+    const response = await fetch(import.meta.env.VITE_FORMSPREE_ENDPOINT, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
